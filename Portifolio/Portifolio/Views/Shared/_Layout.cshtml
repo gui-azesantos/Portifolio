@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <style>
+        #brand-image {
+            height: 40px;
+            width: 40px;
+            max-width: 100px;
+            margin-top: -7px
+        }
+    </style>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" style="        font-family: Bahnschrift;
+        color: white;
+    ">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="~/Home/Index">
+                    <img id="brand-image" alt="Logo" src="https://avatars3.githubusercontent.com/u/55855695?s=460&v=4" />
+                </a>
+
+            </div>
+
+
+
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Projetos", "Index", "Projetos")</li>
+                    <li>@Html.ActionLink("Habilidades", "Index", "Habilidades")</li>
+                    <li>@Html.ActionLink("Contato", "Index", "Contato")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - ASP.NET Application by Guilherme Azevedo</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
